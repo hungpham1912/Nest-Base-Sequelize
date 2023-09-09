@@ -18,6 +18,8 @@ export class UsersService {
   async findAll() {
     return await this.usersRepository.findAll({
       where: {},
+      limit: 2,
+      offset: 0,
     });
   }
 

@@ -5,6 +5,7 @@ import {
   PrimaryKey,
   Default,
   DataType,
+  Unique,
 } from 'sequelize-typescript';
 
 @Table
@@ -12,11 +13,12 @@ export class User extends Model {
   @PrimaryKey
   @Default(DataType.UUIDV4)
   @Column(DataType.UUID)
-  id: any;
+  id;
 
+  @Unique
   @Column
   phone: string;
 
-  @Column
+  @Column(DataType.TEXT)
   name: string;
 }
